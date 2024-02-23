@@ -46,16 +46,27 @@ const Navbar = () => {
                 <Link to={"/campaign"}>Campaign</Link>
               </li>
               <li>
-                <Link to={"/"}>Gallery</Link>
+                <Link to={"/gallery"}>Gallery</Link>
               </li>
               <li>
-                <Link to={"/"}>About Us</Link>
+                <Link to={"/about-us"}>About Us</Link>
+              </li>
+              <li>
+                <Link to={"/request"}>Blood Request</Link>
               </li>
             </ul>
           </div>
           <div className="">
-            <button className="comman_btn white_btn me-2">Sign Up</button>
-            <button className="comman_btn">Login</button>
+            <button className="comman_btn white_btn me-2">
+              <Link className="text-danger" to={"/login"}>
+                Sign Up
+              </Link>
+            </button>
+            <button className="comman_btn">
+              <Link className="text-white" to={"/login"}>
+                Login
+              </Link>
+            </button>
           </div>
 
           <div className="d-lg-none cursor-pointer" onClick={toggleMenu}>

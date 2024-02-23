@@ -33,10 +33,10 @@ a {
   font-weight: 500;
   padding: 0.4rem 1rem;
   border-radius: 2rem;
-  color: white;
+  color: white !important;
 }
 .white_btn {
-  background-color: white;
+  background-color: white !important;
   color: var(--main-red);
 }
 .big_text {
@@ -54,6 +54,16 @@ a {
 .blood_bg {
   background: linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 40%)),
     url(../public/images/giving-blood-blood.gif);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+.request_bg {
+  background: linear-gradient(rgb(0 0 0 / 51%), rgb(0 0 0 / 50%)),
+    url(../public/images/request.jpg);
   width: 100%;
   height: 100%;
   background-position: center;
@@ -128,6 +138,11 @@ a {
   }
 }
 
+.errorText {
+  font-size: 17px;
+  font-weight: 500;
+  color: red;
+}
 .compaign_bg {
   background: linear-gradient(rgb(255 247 255 / -10%), rgb(255 255 255 / -1%)),
     url(../public/images/compaing.jpg);
@@ -137,4 +152,115 @@ a {
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: cover;
+}
+
+.about_bg {
+  background: linear-gradient(rgb(0 0 0 / 51%), rgb(0 0 0 / 50%)),
+    url(../public/images/become_donor.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.nav-tabs {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-tabs {
+  gap: 0 !important;
+  transition: all 0.5s !important;
+}
+
+.nav-tabs a {
+  color: black;
+  background-color: white;
+  transition: all 0.5s !important;
+}
+
+.nav-tabs .active {
+  color: white !important;
+  transition: all 0.5s !important;
+  background-color: #ffcb43;
+  background-image: linear-gradient(
+    319deg,
+    #ffd770 0%,
+    #ff64258a 37%,
+    #ff00168c 100%
+  );
+}
+
+.box_shadow{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+/* .table-responsive .row {
+  background: #fb544b;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comman_table_design thead tr th {
+  background-color: #fb544b;
+  color: white;
+  font-weight: normal;
+  font-size: 15px;
+  border: none;
+} */
+.comman_table_design{
+  margin-top: 3.4rem !important;
+}
+.comman_table_design th {
+  color: #007acc !important;
+  background-color: #f2f2f2 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 15px 20px !important;
+  border: 0;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.comman_table_design td {
+  color: #000;
+  font-size: 14px;
+  padding: 15px 20px;
+  border: 0;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 2px solid #f2f2f2;
+  white-space: nowrap;
+}
+.table > :not(:first-child) {
+  border-top: 0;
+}
+.comman_table_design .table-responsive::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  border-radius: 50%;
+}
+.comman_table_design .table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.comman_table_design .table-responsive::-webkit-scrollbar-thumb {
+  background: #007acc;
+  border-radius: 50px;
+}
+.comman_table_design .table-responsive::-webkit-scrollbar-thumb {
+  background: #007acc;
+  border-radius: 50px;
+}
+.comman_table_design .table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #007acc;
+}
+.comman_table_design .mdb-datatable-filter {
+  position: absolute !important;
+  right: 18px !important;
+  top: 7px;
 }

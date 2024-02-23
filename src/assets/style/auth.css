@@ -1,0 +1,30 @@
+.auth_bg {
+  background: linear-gradient(rgba(27, 27, 27, 59%), rgba(21, 8, 8, 55%)),
+    url(../../../public/images/register.webp);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: contain;
+  background-attachment: fixed;
+}
+.auth_bg .container {
+  padding-top: 10rem !important;
+}
+label {
+  margin-top: 14px;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+input, select {
+  width: 100%;
+  padding: 10px 8px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.auth_tab{
+    background: #6e6c718a !important;
+    padding: 0 20px 30px 20px !important;
+}

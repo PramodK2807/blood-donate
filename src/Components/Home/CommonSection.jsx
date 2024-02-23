@@ -28,7 +28,7 @@ const CommonSection = ({
               <p className="">{sectionText2}</p>
             </div>
             {additionalItems && (
-              <div>
+              <div className="my-5">
                 <ul>
                   {additionalItems?.map((item, index) => (
                     <li style={{ listStyle: "inside" }} key={index}>
