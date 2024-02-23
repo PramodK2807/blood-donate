@@ -1,0 +1,46 @@
+ul {
+  list-style: none;
+  gap: 10px;
+  margin-bottom: 0 !important;
+}
+
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@media screen and (max-width: 992px) {
+  .menus {
+    position: absolute;
+    height: 0; /* Initial height, menu starts closed */
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--main-red);
+    top: 70px;
+    border: 1px solid red;
+    color: white;
+    transition: height 0.5s;
+  }
+
+  .menus.show {
+    height: calc(100vh - 70px); /* Open menu height */
+  }
+
+  .menus ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .menus a {
+    color: white !important;
+  }
+}

@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-red: #fb544b;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Raleway", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.color_red {
+  color: var(--main-red);
+}
+.comman_btn {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid var(--main-red);
+  background-color: var(--main-red);
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.white_btn {
+  background-color: white;
+  color: var(--main-red);
+}
+.big_text {
+  font-size: 45px;
+  color: rgb(2, 42, 129);
+  font-weight: 500;
+}
+.bold_text {
+  font-weight: bold;
+}
+.normal_text {
+  font-size: 18px;
+  color: rgb(14, 14, 38);
+}
+.blood_bg {
+  background: linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 40%)),
+    url(../public/images/giving-blood-blood.gif);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+.blood_text {
+  font-size: 17px;
+  font-weight: 500;
+  border-bottom: 2px dashed var(--main-red);
+  display: inline-block;
+  color: var(--main-red);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.blue_heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(2, 42, 129);
+}
+.blood_animate {
+  width: 50px;
+  height: 50px;
+  animation: blood_drop 5s linear infinite;
+}
+@keyframes blood_drop {
+  0% {
+    top: 0%;
   }
-  to {
-    transform: rotate(360deg);
+  80% {
+    opacity: 0.7;
   }
+  100% {
+    opacity: 0.1;
+    top: 80%;
+  }
+}
+
+.card_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  margin: 20px 0;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid var(--main-red);
+}
+
+.border_top {
+  border: 2px solid var(--main-red);
+  border-radius: 2px;
+  width: 70px;
+  animation: random 5s alternate-reverse linear infinite;
+}
+
+@keyframes random {
+  0% {
+    position: relative;
+    left: 0%;
+  }
+  100% {
+    position: relative;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .big_text {
+    font-size: 32px;
+  }
+}
+
+.compaign_bg {
+  background: linear-gradient(rgb(255 247 255 / -10%), rgb(255 255 255 / -1%)),
+    url(../public/images/compaing.jpg);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
 }
