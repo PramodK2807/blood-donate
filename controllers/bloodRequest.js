@@ -9,18 +9,21 @@ const getAllRequests = async (req, res) => {
 };
 
 const createBloodRequests = async (req, res) => {
+  console.log(req);
   try {
-    let { name, bloodGroup, age, contact, gender } = req.body;
-    if (!name || !bloodGroup || !age || !gender) {
+    let bodyAge = +req.body.age;
+    let number = +req.body.contact;
+    let { name, bloodGroup, gender } = req.body;
+    if (!name || !bloodGroup || !bodyAge || !gender) {
       return res
         .status(400)
-        .json({ error: false, message: "All fields required" });
+        .json({ error: true, message: "All fields required" });
     } else {
       let newReq = new BloodReq({
         name,
         bloodGroup,
-        age,
-        contact,
+        age: bodyAge,
+        contact: number,
         gender,
         // hospital,
       });
