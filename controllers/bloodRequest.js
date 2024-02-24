@@ -9,11 +9,11 @@ const getAllRequests = async (req, res) => {
 };
 
 const createBloodRequests = async (req, res) => {
-  console.log(req);
   try {
-    let bodyAge = +req.body.age;
-    let number = +req.body.contact;
+    let bodyAge = parseInt(req.body.age, 10);
+    let number = parseInt(req.body.contact, 10);
     let { name, bloodGroup, gender } = req.body;
+
     if (!name || !bloodGroup || !bodyAge || !gender) {
       return res
         .status(400)
@@ -25,7 +25,6 @@ const createBloodRequests = async (req, res) => {
         age: bodyAge,
         contact: number,
         gender,
-        // hospital,
       });
       await newReq.save();
       return res
@@ -36,7 +35,7 @@ const createBloodRequests = async (req, res) => {
     console.log(error);
     return res
       .status(500)
-      .json({ error: true, message: "Error occured", error });
+      .json({ error: true, message: "Error occurred", error });
   }
 };
 
