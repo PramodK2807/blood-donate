@@ -19,28 +19,50 @@ ul {
 @media screen and (max-width: 992px) {
   .menus {
     position: absolute;
-    height: 0; /* Initial height, menu starts closed */
+    height: 0;
     overflow: hidden;
-    width: 100%;
+    width: 250px;
     background-color: var(--main-red);
     top: 70px;
     border: 1px solid red;
     color: white;
     transition: height 0.5s;
+    right: -15px;
   }
 
   .menus.show {
-    height: calc(100vh - 70px); /* Open menu height */
+    height: calc(100vh - 70px) !important;
   }
 
   .menus ul {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: start;
     flex-direction: column;
+    padding: 40px 0;
   }
 
+  .menus.show ul li,
+  .menus.show ul li a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .menus.show ul {
+    padding-left: 30px;
+  }
   .menus a {
     color: white !important;
   }
+}
+@media screen and (max-width: 400px) {
+  .menus {
+    width: 100%;
+  }
+}
+.nav_user_profile{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid 1px rgb(231, 39, 39);
 }

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { Button } from "rsuite";
-
-// import classNames from "classnames";
-
-// ... (imports)
+import Swal from "sweetalert2";
+import { setUser } from "../../Redux/features/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loader, setLoader] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -17,8 +17,53 @@ const Login = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setLoader(true);
+    try {
+      let formData = {
+        email: data?.email,
+        password: data?.password,
+      };
+
+      let result = await fetch(`${process.env.REACT_APP_API}/api/user/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      let resp = await result.json();
+      console.log(resp);
+
+      if (resp && !resp?.error) {
+        Swal.fire({
+          title: resp?.message,
+          icon: "Success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#3085d6",
+        });
+        dispatch(setUser(resp?.user));
+        navigate("/")
+      } else {
+        Swal.fire({
+          title: resp?.message,
+          icon: "error",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#3085d6",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Login",
+        text: "Error while login",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#3085d6",
+      });
+      setLoader(false);
+    } finally {
+      setLoader(false);
+    }
   };
 
   return (
@@ -30,8 +75,8 @@ const Login = () => {
             <input
               type="text"
               placeholder="Email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
               {...register("email", {
                 required: "* Email is required",
                 pattern: {
@@ -49,8 +94,8 @@ const Login = () => {
             <label>Password:</label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              // value={password}
+              // onChange={(e) => setPassword(e.target.value)}
               placeholder="Password..."
               {...register("password", {
                 required: "* Please Enter Your Password",
@@ -78,7 +123,7 @@ const Login = () => {
             Login
           </Button>
         </div>
-        <div className="d-flex align-content-end justify-content-end mt-4 ">
+        {/* <div className="d-flex align-content-end justify-content-end mt-4 ">
           <Button
             className="px-5 py-2 w-100"
             appearance="primary"
@@ -92,7 +137,7 @@ const Login = () => {
           >
             Fill Credential & Click Login
           </Button>
-        </div>
+        </div> */}
       </form>
     </>
   );

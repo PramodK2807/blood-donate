@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "rsuite";
+import Swal from "sweetalert2";
 
 // import classNames from "classnames";
 
@@ -13,8 +14,63 @@ const Register = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setLoader(true);
+    try {
+      if (data?.password !== data?.cpassword) {
+        Swal.fire({
+          title: "Password not matching",
+          icon: "warning",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#3085d6",
+        });
+        return false;
+      }
+      let formData = {
+        email: data?.email,
+        password: data?.password,
+        fullName: data?.name,
+        age: data?.age,
+      };
+
+      let result = await fetch(
+        `${process.env.REACT_APP_API}/api/user/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      let resp = await result.json();
+
+      if (resp && !resp?.error) {
+        Swal.fire({
+          title: resp?.message,
+          icon: "Success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#3085d6",
+        });
+      } else {
+        Swal.fire({
+          title: resp?.message,
+          icon: "error",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#3085d6",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Error while login",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#3085d6",
+      });
+      setLoader(false);
+    } finally {
+      setLoader(false);
+    }
   };
 
   return (
@@ -121,7 +177,7 @@ const Register = () => {
 
         <div className="d-flex align-content-end justify-content-end mt-4 ">
           <Button
-            className="px-5 py-2"
+            className="px-5 py-2 w-100"
             appearance="primary"
             loading={loader}
             type="submit"
