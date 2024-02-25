@@ -40,4 +40,23 @@ const createBloodRequests = async (req, res) => {
   }
 };
 
-module.exports = { getAllRequests, createBloodRequests };
+const changeStatus = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let bloodRequestExist = await BloodReq.findById({ _id: id });
+    if (bloodRequestExist) {
+      bloodRequestExist.status = "Donated";
+      await bloodRequestExist.save();
+
+      return res.status(200).json({ error: false, message: "Blood donated", bloodRequestExist });
+    } else {
+      return res.status(404).json({ error: true, message: "Data not found" });
+    }
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ error: true, message: "Something went wrong", error });
+  }
+};
+
+module.exports = { getAllRequests, createBloodRequests, changeStatus };
