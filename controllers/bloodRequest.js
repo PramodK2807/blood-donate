@@ -2,7 +2,7 @@ const express = require("express");
 const BloodReq = require("../models/bloodRequestSchema");
 
 const getAllRequests = async (req, res) => {
-  let requests = await BloodReq.find();
+  let requests = await BloodReq.find().populate("hospital");
   return res
     .status(200)
     .json({ error: false, message: "All Requests", requests });
