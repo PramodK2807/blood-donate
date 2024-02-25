@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const bloodReqRoutes = require("./routes/BloodReqRoutes");
+const hospitalRoutes = require("./routes/hospitalRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 2100;
@@ -17,6 +18,7 @@ app.use(cors());
 // Routes
 app.use("/api/user", userRoutes);
 app.use("/api/blood", bloodReqRoutes);
+app.use("/api/hospital", hospitalRoutes);
 
 // Start server
 app.listen(PORT, () => {

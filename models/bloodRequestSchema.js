@@ -24,10 +24,15 @@ const bloodRequestSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  // hospital: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "hospital",
-  // },
+  status: {
+    type: String,
+    enum: ["Pending", "Donated"],
+    default: "Pending",
+  },
+  hospital: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "hospital",
+  },
 });
 
 module.exports = mongoose.model("blood request", bloodRequestSchema);
