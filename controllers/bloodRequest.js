@@ -65,7 +65,7 @@ const viewRequest = async (req, res) => {
   try {
     let id = req.params.id;
     console.log(id)
-    let request = await BloodReq.findById({ _id: id });
+    let request = await BloodReq.findById({ _id: id }).populate("hospital");
     console.log(request)
     if (request) {
       return res
