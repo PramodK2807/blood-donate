@@ -12,7 +12,7 @@ const createBloodRequests = async (req, res) => {
   try {
     let bodyAge = parseInt(req.body.age, 10);
     let number = parseInt(req.body.contact, 10);
-    let { name, bloodGroup, gender } = req.body;
+    let { name, bloodGroup, gender, hospital } = req.body;
 
     if (!name || !bloodGroup || !bodyAge || !gender) {
       return res
@@ -25,6 +25,7 @@ const createBloodRequests = async (req, res) => {
         age: bodyAge,
         contact: number,
         gender,
+        hospital,
       });
       await newReq.save();
       return res
