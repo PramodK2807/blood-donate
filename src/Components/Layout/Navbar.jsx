@@ -55,8 +55,8 @@ const Navbar = () => {
           <div className="logo">
             <Link to="/">
               <img src="/images/icons/logo.png" alt="logo" />
-              <span className="tag_line ms-2 d-none d-md-inline-block color_red">
-                Donate blood Save life
+              <span className="tag_line ms-2 color_red">
+                Pulse Share
               </span>
             </Link>
           </div>
@@ -245,7 +245,12 @@ const Navbar = () => {
                     </div>
                   </p>
                   <p className="py-0">
-                    <Link>Total requests <span className="rounded_count">{(userData?.totalCount)}</span></Link>
+                    <Link>
+                      Total requests{" "}
+                      <span className="rounded_count">
+                        {userData?.totalCount}
+                      </span>
+                    </Link>
                   </p>
                   {/* <p className="py-0">
                     <Link to={"/admin/add-hospitals"}>Admin Panel</Link>

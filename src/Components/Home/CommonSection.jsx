@@ -23,17 +23,15 @@ const CommonSection = ({
           </div>
           <div className={`col-md-7 order-md-${order1} order-2`}>
             <div>
-              <p className="blood_text">{sectionTitle}</p>
+              <p className="blood_text mt-3">{sectionTitle}</p>
               <p className="blue_heading">{sectionText1}</p>
               <p className="">{sectionText2}</p>
             </div>
             {additionalItems && (
               <div className="my-5">
-                <ul>
+                <ul className="style_ul">
                   {additionalItems?.map((item, index) => (
-                    <li style={{ listStyle: "inside" }} key={index}>
-                      {item}
-                    </li>
+                    <li key={index}><span className="ms-4">{item}</span></li>
                   ))}
                 </ul>
               </div>

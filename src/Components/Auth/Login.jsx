@@ -115,7 +115,7 @@ const Login = () => {
 
         <div className="d-flex align-content-end justify-content-end mt-4 ">
           <Button
-            className="px-5 py-2 w-100"
+            className="px-5 py-3 fw-bold w-100 comman_btn" 
             appearance="primary"
             loading={loader}
             type="submit"

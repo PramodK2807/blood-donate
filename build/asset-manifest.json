@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.475f41ef.css",
-    "main.js": "/static/js/main.a52ec050.js",
+    "main.css": "/static/css/main.b6d7b4ef.css",
+    "main.js": "/static/js/main.e2ecb51d.js",
     "static/js/453.a93c5cd1.chunk.js": "/static/js/453.a93c5cd1.chunk.js",
     "static/media/request.jpg": "/static/media/request.1c6af56b3d452d8dc2ea.jpg",
     "static/media/giving-blood-blood.gif": "/static/media/giving-blood-blood.fe7db84ae9b2225befbe.gif",
@@ -9,12 +9,12 @@
     "static/media/compaing.jpg": "/static/media/compaing.60c0db04da7c9a655893.jpg",
     "static/media/register.webp": "/static/media/register.17204c3a2412e25b913d.webp",
     "index.html": "/index.html",
-    "main.475f41ef.css.map": "/static/css/main.475f41ef.css.map",
-    "main.a52ec050.js.map": "/static/js/main.a52ec050.js.map",
+    "main.b6d7b4ef.css.map": "/static/css/main.b6d7b4ef.css.map",
+    "main.e2ecb51d.js.map": "/static/js/main.e2ecb51d.js.map",
     "453.a93c5cd1.chunk.js.map": "/static/js/453.a93c5cd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.475f41ef.css",
-    "static/js/main.a52ec050.js"
+    "static/css/main.b6d7b4ef.css",
+    "static/js/main.e2ecb51d.js"
   ]
 }

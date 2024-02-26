@@ -26,18 +26,31 @@ a {
 }
 .comman_btn {
   font-family: "Poppins", sans-serif;
-  border: 1px solid var(--main-red);
-  background-color: var(--main-red);
+  border: 1px solid var(--main-red) !important;
+  background-color: var(--main-red) !important;
   outline: none;
   font-size: 15px;
   font-weight: 500;
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   color: white !important;
+  transition: all 1s;
+  letter-spacing: 1px !important;
 }
 .white_btn {
   background-color: white !important;
   color: var(--main-red);
+  transition: all 1s;
+  letter-spacing: 1px !important;
+}
+
+.white_btn:hover {
+  background-color: #fb544b !important;
+  color: white !important;
+}
+.comman_btn:hover {
+  color: #fb544b !important;
+  background-color: white !important;
 }
 .big_text {
   font-size: 45px;
@@ -353,17 +366,67 @@ div.dataTables_wrapper div.dataTables_paginate {
   display: inline-block;
   width: 100%;
 }
-.blood_details_span span{
+.blood_details_span span {
   color: #fb544b;
   font-size: 17px;
   font-weight: 400;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   padding: 9px 0;
 }
-.rounded_count{
+.rounded_count {
   padding: 2px 10px;
   background: #ff2323b5;
   border-radius: 61%;
   color: white;
   margin-left: 10px;
+}
+.blood_cards img{
+padding: 10px;
+}
+.blood_cards .title{
+  font-size: 30px;
+  font-weight: bold;
+}
+.blood_cards .desc{
+  font-size: 14px;
+}
+
+@media screen and (max-width:600px) {
+  .blood_cards .title{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .blood_cards .desc{
+    font-size: 12px;
+  }
+}
+.blood_cards .card_cont{
+  transition: 1s all ease;
+}
+
+.blood_cards .card_cont:hover{
+  background-color: #fb544b;
+  color: white;
+}
+
+.style_ul {
+  list-style: "»" !important;
+  content: "»" !important;
+}
+.style_ul li{
+  padding: 4px 0 !important;
+}
+.style_ul li a {
+  margin-left: 20px !important;
+  color: white !important;
+  font-size: 16px;
+
+  transition: 0.7s all ease;
+}
+
+.style_ul li a:hover {
+  color: var(--main-red) !important;
+}
+nav .style_ul{
+  padding-left: 12px !important;
 }

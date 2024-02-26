@@ -14,9 +14,7 @@ const Footer = () => {
                   src="/images/icons/logo.png"
                   alt="logo"
                 />
-                <span className="tag_line color_red ms-4">
-                  Donate blood Save life
-                </span>
+                <span className="tag_line color_red ms-4">Pulse Share</span>
               </Link>
             </div>
             <div class="intro text-white mt-5 ms-2">
@@ -28,40 +26,35 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="col-6 col-md-4 text-light">
+          <div className="col-6 col-md-4 text-light mt-5 mt-md-0">
             <div className="border_top mb-4"></div>
             <div>
               <h4>Quick Links</h4>
               <div>
                 <nav>
-                  <ul>
+                  <ul className="p-0 style_ul">
                     <li>
                       <Link to={"/"}>Home</Link>
                     </li>
                     <li>
-                      <Link to={"/"}>Register</Link>
+                      <Link to={"/login"}>Register</Link>
                     </li>
                     <li>
-                      <Link to={"/"}>Gallery</Link>
+                      <Link to={"/gallery"}>Gallery</Link>
                     </li>
                     <li>
-                      <Link to={"/"}>Home</Link>
+                      <Link to={"/request"}>Blood request</Link>
                     </li>
                     <li>
-                      <Link to={"/"}>Home</Link>
+                      <Link to={"/about-us"}>About us</Link>
                     </li>
-                    <li>
-                      <Link to={"/"}>Home</Link>
-                    </li>
-                    <li>
-                      <Link to={"/"}>Home</Link>
-                    </li>
+                    
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
-          <div className="col-6 col-md-4 text-light">
+          <div className="col-6 col-md-4 text-light mt-5 mt-md-0">
             <div className="border_top mb-4"></div>
             <div>
               <h4>Contact Us</h4>
@@ -75,7 +68,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <div className="border_top my-4"></div>
+              <div className="border_top my-4 mt-5 mt-md-4"></div>
               <div>
                 <h4>Social Media</h4>
                 <div>
@@ -87,6 +80,12 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="border-danger border-top">
+          <div className="text-center py-3">
+            <p>Copyright © 2024 Pulse Share All rights reserved</p>
           </div>
         </div>
       </div>

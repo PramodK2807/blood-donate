@@ -223,28 +223,7 @@ const Request = () => {
                       <p className="errorText">{errors.name.message}</p>
                     )}
                   </div>
-                  <div className="col-6 col-md-6">
-                    <label>Blood Group</label>
-                    <select
-                      {...register("bloodGroup", {
-                        required: "* Blood Group is required",
-                      })}
-                    >
-                      <option value="">Required blood group</option>
-                      <option value="A+">A+</option>
-                      <option value="A-">A-</option>
-                      <option value="B+">B+</option>
-                      <option value="B-">B-</option>
-                      <option value="O+">O+</option>
-                      <option value="O-">O-</option>
-                      <option value="AB+">AB+</option>
-                      <option value="AB-">AB-</option>
-                    </select>
-                    {errors.bloodGroup && (
-                      <p className="errorText">{errors.bloodGroup.message}</p>
-                    )}
-                  </div>
-                  <div className="col-12">
+                  <div className="col-md-6">
                     <label>Hospital</label>
                     <select
                       {...register("hospital", {
@@ -265,7 +244,7 @@ const Request = () => {
                       <p className="errorText">{errors.hospital.message}</p>
                     )}
                   </div>
-                  <div className="col-6 col-md-4">
+                  <div className="col-6">
                     <label>Age</label>
                     <input
                       type="number"
@@ -273,7 +252,7 @@ const Request = () => {
                       {...register("age")}
                     />
                   </div>
-                  <div className="col-6 col-md-4">
+                  <div className="col-6">
                     <label>Contact Person</label>
                     <input
                       type="number"
@@ -294,7 +273,28 @@ const Request = () => {
                       <p className="errorText">{errors.contact.message}</p>
                     )}
                   </div>
-                  <div className="col-6 col-md-4">
+                  <div className="col-6">
+                    <label>Blood Group</label>
+                    <select
+                      {...register("bloodGroup", {
+                        required: "* Blood Group is required",
+                      })}
+                    >
+                      <option value="">Required blood group</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                    </select>
+                    {errors.bloodGroup && (
+                      <p className="errorText">{errors.bloodGroup.message}</p>
+                    )}
+                  </div>
+                  <div className="col-6">
                     <label>Gender</label>
                     <select
                       {...register("gender", {

@@ -22,9 +22,9 @@ const Homepage = () => {
       <div className="my-5">
         <Section3 />
       </div>
-      <div className="my-5">
+      {/* <div className="my-5">
         <Testimonials />
-      </div>
+      </div> */}
     </Layout>
   );
 };

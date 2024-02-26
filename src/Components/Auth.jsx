@@ -11,7 +11,7 @@ const Auth = () => {
         <div className="auth_bg">
           <div className="container">
             <div className="row align-items-center justify-content-center py-5 ">
-              <div className="mt-5 col-md-6 box_shadow">
+              <div className="mt-5 p-0 col-md-6 box_shadow bg-white">
                 <ul
                   class="nav nav-tabs nav-justified mb-0"
                   id="ex1"

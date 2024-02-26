@@ -4,3 +4,8 @@ label {
   font-weight: 400;
   margin-bottom: 4px;
 }
+select,
+input {
+  background-color: rgb(242, 239, 234);
+}
+
