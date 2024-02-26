@@ -53,9 +53,9 @@ const Navbar = () => {
       <div className="container-fluid">
         <nav className="navbar">
           <div className="logo">
-            <Link to="/">
+            <Link to="/" className="d-flex align-items-center">
               <img src="/images/icons/logo.png" alt="logo" />
-              <span className="tag_line ms-2 color_red">
+              <span className="tag_line ms-2 color_red d-none d-md-block">
                 Pulse Share
               </span>
             </Link>
