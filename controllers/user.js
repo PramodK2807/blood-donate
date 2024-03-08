@@ -1,5 +1,7 @@
 const express = require("express");
 const User = require("../models/userSchema");
+const jwt = require("jsonwebtoken");
+const { hashPassword, verifyPassword } = require("../helpers/password");
 
 const registerUser = async (req, res) => {
   try {
@@ -19,10 +21,12 @@ const registerUser = async (req, res) => {
         .json({ error: true, message: "User already registered" });
     }
 
+    const hashedPassword = await hashPassword(password);
+
     const newUser = new User({
       fullName,
       email,
-      password,
+      password: hashedPassword,
       age,
     });
 
@@ -45,14 +49,26 @@ const loginUser = async (req, res) => {
   if (!existingUser) {
     return res.status(400).json({ error: true, message: "User not found" });
   } else {
-    // console.log(existingUser)
-    if (existingUser.password !== password) {
+    const verifyPass = await verifyPassword(password, existingUser?.password);
+
+    if (!verifyPass) {
       return res.status(400).json({ error: true, message: "Invalid data" });
     } else {
+      let user = {
+        _id: existingUser._id,
+        fullName: existingUser.fullName,
+        email: existingUser.email,
+        age: existingUser.age,
+      };
+      let token = await jwt.sign(user, "GYUSYUVGUHLBHKUIG^*FGOSGF^TGYUVS", {
+        expiresIn: "7d",
+      });
+
       return res.status(200).json({
         error: false,
         message: "Logged in successfully",
-        user: existingUser,
+        user: user,
+        token,
       });
     }
   }
