@@ -15,7 +15,13 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm({ mode: "onChange" });
+
+  const fillCredentials = () => {
+    setValue("email", "test@gmail.com");
+    setValue("password", "Test@1234");
+  };
 
   const onSubmit = async (data) => {
     setLoader(true);
@@ -43,7 +49,7 @@ const Login = () => {
           confirmButtonColor: "#3085d6",
         });
         dispatch(setUser(resp?.user));
-        navigate("/")
+        navigate("/");
       } else {
         Swal.fire({
           title: resp?.message,
@@ -115,7 +121,7 @@ const Login = () => {
 
         <div className="d-flex align-content-end justify-content-end mt-4 ">
           <Button
-            className="px-5 py-3 fw-bold w-100 comman_btn" 
+            className="px-5 py-3 fw-bold w-100 comman_btn"
             appearance="primary"
             loading={loader}
             type="submit"
@@ -123,21 +129,18 @@ const Login = () => {
             Login
           </Button>
         </div>
-        {/* <div className="d-flex align-content-end justify-content-end mt-4 ">
+        <div className="d-flex align-content-end justify-content-end mt-4 ">
           <Button
             className="px-5 py-2 w-100"
             appearance="primary"
             color="yellow"
-            loading={loader}
+            // loading={loader}
             type="button"
-            onClick={() => {
-              setEmail("pramod@gmail.com");
-              setPassword("Test@1234");
-            }}
+            onClick={fillCredentials}
           >
             Fill Credential & Click Login
           </Button>
-        </div> */}
+        </div>
       </form>
     </>
   );

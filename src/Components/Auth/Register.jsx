@@ -52,6 +52,7 @@ const Register = () => {
           confirmButtonText: "Ok",
           confirmButtonColor: "#3085d6",
         });
+        document.getElementById("reset").click();
       } else {
         Swal.fire({
           title: resp?.message,
@@ -184,6 +185,9 @@ const Register = () => {
           >
             Register
           </Button>
+          <button className="d-none" id="reset" type="reset">
+            reset
+          </button>
         </div>
       </form>
     </>

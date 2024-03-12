@@ -45,6 +45,7 @@ const Navbar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("butdtvdgfhd");
     console.log(updateDetails.email);
   };
 
@@ -155,95 +156,15 @@ const Navbar = () => {
                       </div>
                     </div>
                   </p>
-                  <p className="py-0">
+                  {/* <p className="py-0">
                     <Link
                       data-bs-toggle="modal"
                       data-bs-target="#staticBackdrop2"
+                      type="button"
                     >
                       Update Profile
                     </Link>
-                    <div
-                      class="modal fade"
-                      id="staticBackdrop2"
-                      data-bs-backdrop="static"
-                      data-bs-keyboard="false"
-                      tabindex="-1"
-                      aria-labelledby="staticBackdropLabel"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">
-                              Update Profile
-                            </h5>
-                            <button
-                              type="reset"
-                              class="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div class="modal-body">
-                            <div className="row">
-                              <div className="col-12">
-                                <div className="d-flex align-items-center justify-content-center">
-                                  <img
-                                    src="/images/user.png"
-                                    className="nav_user_profile"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-12">
-                                <label htmlFor="name">Name</label>
-                                <input
-                                  type="text"
-                                  placeholder="Name..."
-                                  defaultValue={userData?.user?.fullName}
-                                  className="w-100 rounded-2 border-1 px-2 py-2"
-                                  onChange={(e) =>
-                                    setUpdateDetails({
-                                      ...updateDetails,
-                                      fullName: e.target.value,
-                                    })
-                                  }
-                                />
-                              </div>
-                              <div className="col-12">
-                                <label htmlFor="name">Email</label>
-                                <input
-                                  type="text"
-                                  placeholder="Name..."
-                                  defaultValue={userData?.user?.email}
-                                  className="w-100 rounded-2 border-1 px-2 py-2"
-                                  onChange={(e) =>
-                                    setUpdateDetails({
-                                      ...updateDetails,
-                                      email: e.target.value,
-                                    })
-                                  }
-                                />
-                              </div>
-                            </div>
-                            <div className="text-end mt-3">
-                              <Button
-                                type="submit"
-                                className="px-4"
-                                appearance="primary"
-                                // loading={loader}
-                                // onClick={(e) => handleSubmit(e)}
-                                onClick={() => alert("Hello")}
-                              >
-                                Update
-                              </Button>
-                              {/* <button   onClick={(e) => handleSubmit(e)} >update</button> */}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </p>
+                  </p> */}
                   <p className="py-0">
                     <Link>
                       Total requests{" "}
@@ -274,6 +195,7 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+          
 
           <div className="d-lg-none cursor-pointer" onClick={toggleMenu}>
             {showMenu ? (
